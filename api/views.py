@@ -22,9 +22,9 @@ def add_rooms(request):
     if Room.objects.filter(**request.data).exists():
         raise serializers.ValidationError('This data already exists')
 
-    if item.is_valid():
+    if room.is_valid():
         room.save()
-        return Response(item.data)
+        return Response(room.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
