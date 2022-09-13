@@ -27,3 +27,16 @@ def add_items(request):
         return Response(item.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def view_rooms(request):
+    if request.query_params:
+        rooms = Room.objects.filter(**request.query_param.dict())
+    else:
+        room = Room.objects.all()
+
+    if rooms:
+        data = RoomSerializer(rooms)
+        return Response(data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
