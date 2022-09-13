@@ -34,9 +34,10 @@ def view_rooms(request):
         rooms = Room.objects.filter(**request.query_param.dict())
     else:
         rooms = Room.objects.all()
+        serializer = RoomSerializer(rooms, many=True)
 
     if rooms:
         data = RoomSerializer(rooms)
-        return Response(data)
+        return Response(serializer.data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
