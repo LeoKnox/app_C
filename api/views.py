@@ -44,6 +44,6 @@ def view_rooms(request):
 
 @api_view(['DELETE'])
 def delete_rooms(request, pk):
-    room = get_object_or_404(room, pk=pk)
+    room = get_object_or_404(Room, pk=pk)
     room.delete()
     return Response(status = status.HTTP_202_ACCEPTED)
