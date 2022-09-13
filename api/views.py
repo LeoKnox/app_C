@@ -33,7 +33,7 @@ def view_rooms(request):
     if request.query_params:
         rooms = Room.objects.filter(**request.query_param.dict())
     else:
-        room = Room.objects.all()
+        rooms = Room.objects.all()
 
     if rooms:
         data = RoomSerializer(rooms)
