@@ -1,5 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import serializers, status
 from .models import Room
 from .serializers import RoomSerializer
 
@@ -13,3 +14,16 @@ def ApiOverview(request):
     }
 
     return Response(api_urls)
+
+@api_view(['POST'])
+def add_items(request):
+    room = RoomSerializer(data=request.data)
+
+    if Room.objects.filter(**request.data).exists():
+        raise serializers.ValidationError('This data already exists')
+
+    if item.is_valid():
+        room.save()
+        return Response(item.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
