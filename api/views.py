@@ -43,6 +43,17 @@ def view_rooms(request):
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+@api_view(['POST'])
+def update_rooms(request, pk):
+    room = Room.objects.get(pk=pk)
+    data = RoomSerializer(instance=room, data=request.data)
+
+    if data.is_valid():
+        data.save()
+        return Response(data.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
 @api_view(['DELETE'])
 def delete_rooms(request, pk):
     room = get_object_or_404(Room, pk=pk)
