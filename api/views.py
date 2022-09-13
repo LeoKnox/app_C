@@ -16,7 +16,7 @@ def ApiOverview(request):
     return Response(api_urls)
 
 @api_view(['POST'])
-def add_items(request):
+def add_rooms(request):
     room = RoomSerializer(data=request.data)
 
     if Room.objects.filter(**request.data).exists():
