@@ -43,7 +43,7 @@ def view_rooms(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['DELETE'])
-def delete_items(request, pk):
+def delete_rooms(request, pk):
     room = get_object_or_404(room, pk=pk)
     room.delete()
     return Response(status = status.HTTP_202_ACCEPTED)
