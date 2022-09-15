@@ -18,9 +18,22 @@ function Rooms() {
     return (
         <>
         <p>List Rooms</p>
-        {rooms.map((room) => (
-            <p>{room.name}</p>
-        )) }
+        <table>
+            <th>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Length</td>
+                <td>Width</td>
+            </th>
+            {rooms.map((room) => (
+                <tr>
+                    <td>{room.name}</td>
+                    <td>{room.description}</td>
+                    <td>{room.length}</td>
+                    <td>{room.width}</td>
+                </tr>
+            )) }
+        </table>
         </>
     )
 }
