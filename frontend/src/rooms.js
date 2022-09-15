@@ -18,6 +18,9 @@ function Rooms() {
     return (
         <>
         <p>List Rooms</p>
+        {rooms.map((room) => (
+            <p>{room.name}</p>
+        )) }
         </>
     )
 }
