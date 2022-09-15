@@ -19,12 +19,12 @@ function Rooms() {
         <>
         <p>List Rooms</p>
         <table>
-            <th>
-                <td>Name</td>
-                <td>Description</td>
-                <td>Length</td>
-                <td>Width</td>
-            </th>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Length</th>
+                <th>Width</th>
+            </tr>
             {rooms.map((room) => (
                 <tr>
                     <td>{room.name}</td>
