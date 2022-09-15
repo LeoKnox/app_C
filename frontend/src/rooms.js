@@ -10,6 +10,7 @@ function Rooms() {
             .then(res => {
                 const data = res.data;
                 setRooms(data);
+                console.log(rooms + "222");
             })
             .catch(err => {})
     }, [])
@@ -18,9 +19,7 @@ function Rooms() {
         <>
         <p>List Rooms</p>
         {rooms.map((room) => (
-            <div>
-                <p>{room.name}</p>
-            </div>
+            <p>{room}</p>
         ))}
         </>
     )
