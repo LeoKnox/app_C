@@ -24,8 +24,8 @@ function Create() {
         let newRoom = {name, description, length, width};
         axios.post({
             method: 'post',
-            url: 'localhost/api/create',
-            data: newRoom
+            url: 'http://127.0.0.1:8000/api/create',
+            data: newRoom[0]
         });
         e.preventDefault();
         console.log(newRoom);
