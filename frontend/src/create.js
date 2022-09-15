@@ -10,7 +10,9 @@ function Create() {
     return (
         <>
         <p>Create Room</p>
-        <input onSubmit={create_room} type="submit" value="Submit" />
+        <form onSubmit={create_room}>
+            <input type="submit" value="Submit" />
+        </form>
         </>
     )
 }
