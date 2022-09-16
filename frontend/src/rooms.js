@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Delete from './delete.js';
 import axios from 'axios';
 
 function Rooms() {
@@ -13,7 +14,7 @@ function Rooms() {
                 console.log(rooms);
             })
             .catch(err => {})
-    }, [rooms])
+    }, [rooms.length])
 
     return (
         <>
@@ -25,15 +26,16 @@ function Rooms() {
                 <th>Length</th>
                 <th>Width</th>
             </tr>
-        </table>
             {rooms.map((room, index) => (
                 <tr>
                     <td>{room.name}</td>
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
+                    <Delete />
                 </tr>
             ))}
+        </table>
         </>
     )
 }
