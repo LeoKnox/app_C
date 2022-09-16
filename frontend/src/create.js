@@ -22,7 +22,7 @@ function Create() {
 
     function create_room(e) {
         let newRoom = {name, description, length, width};
-        axios.post({
+        axios({
             method: 'post',
             url: 'http://127.0.0.1:8000/api/create',
             data: newRoom[0]
