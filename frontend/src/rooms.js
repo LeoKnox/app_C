@@ -13,7 +13,7 @@ function Rooms() {
                 console.log(rooms);
             })
             .catch(err => {})
-    }, [])
+    }, [rooms])
 
     return (
         <>
@@ -25,15 +25,15 @@ function Rooms() {
                 <th>Length</th>
                 <th>Width</th>
             </tr>
-            {rooms.map((room) => (
+        </table>
+            {rooms.map((room, index) => (
                 <tr>
                     <td>{room.name}</td>
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
                 </tr>
-            )) }
-        </table>
+            ))}
         </>
     )
 }
