@@ -32,7 +32,7 @@ function Rooms() {
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
-                    <Delete />
+                    <Delete id="{room.id}" />
                 </tr>
             ))}
         </table>

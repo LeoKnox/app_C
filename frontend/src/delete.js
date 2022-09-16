@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-function Delete() {
+function Delete(id) {
     return(
-        <button>Delete</button>
+        <button>Delete {id}</button>
     )
 }
 
