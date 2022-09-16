@@ -28,7 +28,6 @@ function Create() {
             data: newRoom
         });
         e.preventDefault();
-        console.log(newRoom);
     }
 
     return (
