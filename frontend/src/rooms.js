@@ -28,11 +28,11 @@ function Rooms() {
             </tr>
             {rooms.map((room, index) => (
                 <tr key={room.id}>
-                    <td>{room.name}</td>
+                    <td>-{room.id}+{room.name}</td>
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
-                    <Delete id={String(room.id)} />
+                    <Delete id={room.id} />
                 </tr>
             ))}
         </table>
