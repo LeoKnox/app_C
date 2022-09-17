@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function Delete(id) {
     function delete_room(e) {
-        console.log('***'+id.id);
+        console.log('***'+id.room.id);
         axios({
             method:'delete',
             url: 'http://127.0.0.1:8000/api/room/'+String(id.id)+'/delete/'
