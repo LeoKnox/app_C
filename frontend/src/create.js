@@ -34,12 +34,16 @@ function Create() {
         <>
         <p>Create Room</p>
         <form onSubmit={create_room}>
+            <label>Name: </label>
             <input type="text" value={name} onChange={(e) =>
                 {nameChange(e)}} /><br />
+            <label>Description: </label>
             <input type="text" value={description} onChange={(e) =>
                 {descriptionChange(e)}} /><br />
+            <label>Width: </label>
             <input type="number" value={width} onChange={(e) =>
                 {widthChange(e)}} /><br />
+            <label>Length: </label>
             <input type="number" value={length} onChange={(e) =>
                 {lengthChange(e)}} /><br />
             <input type="submit" value="Submit" />
