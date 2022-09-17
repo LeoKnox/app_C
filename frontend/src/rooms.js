@@ -28,7 +28,7 @@ function Rooms() {
             </tr>
             {rooms.map((room, index) => (
                 <tr key={index}>
-                    <td>-{room.id}+{room.name}</td>
+                    <td>{room.name}</td>
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
