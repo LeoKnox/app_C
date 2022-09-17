@@ -5,7 +5,7 @@ function Delete(id) {
         console.log('***'+JSON.stringify(id));
         axios({
             method:'delete',
-            url: 'http://127.0.0.1:8000/api/room/'+String(id.id)+'/delete/'
+            url: 'http://127.0.0.1:8000/api/room/'+id+'/delete/'
         });
     }
     return(
