@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import Home from './home.js';
+import Single from './single.js';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />}>
-              <Route path="single" element={<single />} />
+              <Route path="single" element={<Single />} />
             </Route>
           </Routes>
         </Router>
