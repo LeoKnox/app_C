@@ -13,7 +13,9 @@ function App() {
       <header className="App-header">
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />}>
+              <Route path="single" element={<single />} />
+            </Route>
           </Routes>
         </Router>
       </header>
