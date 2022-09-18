@@ -15,7 +15,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="single" element={<Single />} />
+            <Route path="single" element={<Single />}>
+              <Route path=":roomid" element={<Single />} />
+            </Route>
           </Routes>
         </Router>
       </header>
