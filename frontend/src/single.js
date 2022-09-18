@@ -1,7 +1,11 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useParams } from "react-router-dom";
 
 function Single() {
     let params = useParams();
+    let room = axios.put(`http://127.0.0.1:8000/api/update/${params.roomid}`);
+    console.log(room);
     console.log(params.roomid);
     return (
         <>
