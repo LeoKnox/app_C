@@ -30,7 +30,7 @@ function Rooms() {
             {rooms.map((room, index) => (
                 <tr key={index}>
                     <td>
-                        <Link to=`{/single/${room.id}`>
+                        <Link to={`{/single/${room.id}`}>
                             {room.name}
                         </Link>
                     </td>
