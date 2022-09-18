@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import Delete from './delete.js';
 import axios from 'axios';
 
@@ -28,7 +29,11 @@ function Rooms() {
             </tr>
             {rooms.map((room, index) => (
                 <tr key={index}>
-                    <td>{room.name}</td>
+                    <td>
+                        <Link to="/single">
+                            {room.name}
+                        </Link>
+                    </td>
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
