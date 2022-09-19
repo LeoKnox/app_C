@@ -11,7 +11,8 @@ def ApiOverview(request):
         'all_items': '/',
         'Add': '/create',
         'Update': '/update/pk',
-        'Delete': '/item/pk/delete'
+        'Delete': '/item/pk/delete',
+        'Single': '/item/room/pk'
     }
 
     return Response(api_urls)
@@ -19,6 +20,7 @@ def ApiOverview(request):
 @api_view(['GET'])
 def show_room(request, pk):
     room = get_object_or_404(Room, pk=pk)
+    print(room)
     return Response(room)
 
 
