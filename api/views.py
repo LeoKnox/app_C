@@ -16,6 +16,12 @@ def ApiOverview(request):
 
     return Response(api_urls)
 
+@api_view(['GET'])
+def show_room(request, pk):
+    room = get_object_or_404(Room, pk=pk)
+    return Response(room)
+
+
 @api_view(['POST'])
 def add_rooms(request):
     room = RoomSerializer(data=request.data)
