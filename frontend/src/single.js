@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 
 function Single() {
-    const [room, setRoom] = useState("");
+    const [room, setRoom] = useState(false);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [length, setLength] = useState("");
