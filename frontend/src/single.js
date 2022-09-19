@@ -9,7 +9,7 @@ function Single() {
     const nameChange = (e) => {
         setName(e.target.value);
     }
-    
+
     let params = useParams();
     useEffect(() => {
     axios.get(`http://127.0.0.1:8000/api/room/${params.roomid}/`)
@@ -31,7 +31,7 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" value={name}
-                    placeholder={room.name}
+                    value={room.name}
                     onchange={(e) => {nameChange(e)}} /><br />
             </form>
             <p>Name: {room.name}</p>
