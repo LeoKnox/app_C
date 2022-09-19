@@ -21,7 +21,7 @@ function Single() {
             setRoom(data);
         })
         .catch(err => {})
-    }, [])
+    }, [room.name])
     console.log(room);
 
     function update_room(e) {
@@ -35,7 +35,7 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" value={name}
-                    value={room ? room.name : room}
+                    placeholder={room.name}
                     onchange={(e) => {nameChange(e)}} /><br />
             </form>
             <p>Name: {room.name}</p>
