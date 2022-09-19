@@ -35,8 +35,8 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" value={name}
-                    value={room.name}
-                    onchange={(e) => {nameChange(e.target.value)}} /><br />
+                    value={room ? room.name : room}
+                    onchange={(e) => {nameChange(e)}} /><br />
             </form>
             <p>Name: {room.name}</p>
             <p>Description: {room.description}</p>
