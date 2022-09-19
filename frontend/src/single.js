@@ -18,9 +18,9 @@ function Single() {
     return (
         <>
             <h3>A single room</h3>
-            <p>Name:{room.data}</p>
-            <p>Description:</p>
-            <p>Width: x Length:</p>
+            <p>Name: {room.name}</p>
+            <p>Description: {room.description}</p>
+            <p>Width: {room.width} x Length: {room.length}</p>
         </>
     )
 }
