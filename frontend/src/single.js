@@ -36,7 +36,7 @@ function Single() {
                 <label>Name: </label>
                 <input type="text" value={name}
                     value={room.name}
-                    onchange={(e) => {nameChange(e)}} /><br />
+                    onchange={(e) => {nameChange(e.target.value)}} /><br />
             </form>
             <p>Name: {room.name}</p>
             <p>Description: {room.description}</p>
