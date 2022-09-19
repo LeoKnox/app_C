@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 function Single() {
     const [room, setRoom] = useState("");
     const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [length, setLength] = useState("");
+    const [width, setWidth] = useState("");
 
     const nameChange = (e) => {
         setName(e.target.value);
@@ -22,7 +25,8 @@ function Single() {
     console.log(room);
 
     function update_room(e) {
-        console.log("red");
+        let updateRoom = {name, description, length, width}
+        e.preventDefault();
     }
 
     return (
