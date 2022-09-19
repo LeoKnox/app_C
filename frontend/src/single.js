@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 function Single() {
     let params = useParams();
-    let room = axios.put(`http://127.0.0.1:8000/api/update/${params.roomid}`);
+    let room = axios.get(`http://127.0.0.1:8000/api/room/${params.roomid}/`);
     console.log(room);
     console.log(params.roomid);
     return (
