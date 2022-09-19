@@ -3,14 +3,22 @@ import axios from 'axios';
 import { useParams } from "react-router-dom";
 
 function Single() {
+    const [room, setRoom] = useState("");
     let params = useParams();
-    let room = axios.get(`http://127.0.0.1:8000/api/room/${params.roomid}/`);
+    useEffect(() => {
+    axios.get(`http://127.0.0.1:8000/api/room/${params.roomid}/`)
+        .then(res => {
+            const data = res.data;
+            setRoom(data);
+        })
+        .catch(err => {})
+    }, [])
     console.log(room);
-    console.log(params.roomid);
+
     return (
         <>
             <h3>A single room</h3>
-            <p>Name:</p>
+            <p>Name:{room.data}</p>
             <p>Description:</p>
             <p>Width: x Length:</p>
         </>
