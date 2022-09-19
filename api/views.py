@@ -19,9 +19,11 @@ def ApiOverview(request):
 
 @api_view(['GET'])
 def show_room(request, pk):
-    room = get_object_or_404(Room, pk=pk)
-    print(room)
-    return Response(room)
+    snippet = get_object_or_404(Room, pk=pk)
+    #snippet = Room.objects.get(pk=pk)
+    room = RoomSerializer(snippet)
+    print('***',room)
+    return Response(room.data)
 
 
 @api_view(['POST'])
