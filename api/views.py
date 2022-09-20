@@ -53,7 +53,7 @@ def view_rooms(request):
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def update_rooms(request, pk):
     room = Room.objects.get(pk=pk)
     data = RoomSerializer(instance=room, data=request.data)
