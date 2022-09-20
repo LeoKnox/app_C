@@ -46,6 +46,7 @@ function Single() {
                 <label> Length: </label>
                 <input type="number" placeholder={room.length}
                     onchange={(e) => {makeChange(e)}} /><br />
+                <input type="submit" value="Submit" />
             </form>
         </>
     )
