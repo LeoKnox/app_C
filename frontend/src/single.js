@@ -36,7 +36,7 @@ function Single() {
             <h3>A single room</h3>
             <form onSubmit={update_room}>
                 <label>Name: </label>
-                <input type="text" value={room.name}
+                <input type="text" placeholder={room.name}
                     onchange={(e) => {nameChange(e)}} /><br />
             </form>
             <p>Name: {room.name}</p>
