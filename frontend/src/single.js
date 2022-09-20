@@ -36,16 +36,16 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" placeholder={room.name}
-                    onchange={(e) => {makeChange(e)}} /><br />
+                    onChange={(e) => {makeChange(e)}} /><br />
                 <label>Description: </label>
                 <input type="text" placeholder={room.description}
-                    onchange={(e) => {makeChange(e)}} /><br />
+                    onChange={(e) => {makeChange(e)}} /><br />
                 <label>Width: </label>
                 <input type="number" placeholder={room.width}
-                    onchange={(e) => {makeChange(e)}} />
+                    onChange={(e) => {makeChange(e)}} />
                 <label> Length: </label>
                 <input type="number" placeholder={room.length}
-                    onchange={(e) => {makeChange(e)}} /><br />
+                    onChange={(e) => {makeChange(e)}} /><br />
                 <input type="submit" value="Submit" />
             </form>
         </>
