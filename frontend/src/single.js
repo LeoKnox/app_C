@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 function Single() {
     const [room, setRoom] = useState(false);
-    const [name, setName] = useState(null);
+    const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [length, setLength] = useState("");
     const [width, setWidth] = useState("");
@@ -12,6 +12,10 @@ function Single() {
     const makeChange = (e) => {
         name = e.target.value;
         setName(name);
+    }
+
+    const roomChange=(e)=>{
+        setName(e.target.value);
     }
 
     let params = useParams();
@@ -30,7 +34,6 @@ function Single() {
         axios({
             method: 'put',
             url: `http://127.0.0.1:8000/api/update/${params.roomid}`,
-
             data: room
         });
         e.preventDefault();
@@ -43,7 +46,7 @@ function Single() {
                 <label>Name: </label>
                 <input type="text"
                     value={name}
-                    onChange={(e) => {makeChange(e)}} /><br />
+                    onChange={(e) => {roomChange(e)}} /><br />
                 <label>Description: </label>
                 <input type="text" placeholder={room.description}
                     onChange={(e) => {makeChange(e)}} /><br />
