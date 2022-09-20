@@ -9,9 +9,8 @@ function Single() {
     const [length, setLength] = useState("");
     const [width, setWidth] = useState("");
 
-    const nameChange = (e) => {
+    const makeChange = (e) => {
         room.name = e.target.value;
-        //setName(e.target.value);
     }
 
     let params = useParams();
@@ -37,11 +36,17 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" placeholder={room.name}
-                    onchange={(e) => {nameChange(e)}} /><br />
+                    onchange={(e) => {makeChange(e)}} /><br />
+                <label>Description: </label>
+                <input type="text" placeholder={room.description}
+                    onchange={(e) => {makeChange(e)}} /><br />
+                <label>Width: </label>
+                <input type="number" placeholder={room.width}
+                    onchange={(e) => {makeChange(e)}} />
+                <label> Length: </label>
+                <input type="number" placeholder={room.length}
+                    onchange={(e) => {makeChange(e)}} /><br />
             </form>
-            <p>Name: {room.name}</p>
-            <p>Description: {room.description}</p>
-            <p>Width: {room.width} x Length: {room.length}</p>
         </>
     )
 }
