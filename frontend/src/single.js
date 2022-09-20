@@ -10,7 +10,7 @@ function Single() {
     const [width, setWidth] = useState("");
 
     const makeChange = (e) => {
-        room.name = e.target.value;
+        name = e.target.value;
     }
 
     let params = useParams();
@@ -41,6 +41,7 @@ function Single() {
             <form onSubmit={update_room}>
                 <label>Name: </label>
                 <input type="text" placeholder={room.name}
+                    value={name}
                     onChange={(e) => {makeChange(e)}} /><br />
                 <label>Description: </label>
                 <input type="text" placeholder={room.description}
