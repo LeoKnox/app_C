@@ -26,7 +26,7 @@ function Single() {
     console.log(room);
 
     function update_room(e) {
-        axios.put(`http://127.0.0.1:8000/api/update/${params.roomid}`)
+        axios.put(`http://127.0.0.1:8000/api/update/${params.roomid}`, room)
         e.preventDefault();
     }
 
