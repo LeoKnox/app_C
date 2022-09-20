@@ -31,6 +31,7 @@ function Single() {
     console.log(room);
 
     function update_room(e) {
+        room.name = name;
         axios({
             method: 'put',
             url: `http://127.0.0.1:8000/api/update/${params.roomid}`,
