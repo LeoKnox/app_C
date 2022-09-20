@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 
 function Single() {
     const [room, setRoom] = useState(false);
-    const [name, setName] = useState("");
+    const [name, setName] = useState(null);
     const [description, setDescription] = useState("");
     const [length, setLength] = useState("");
     const [width, setWidth] = useState("");
 
     const makeChange = (e) => {
         name = e.target.value;
+        setName(name);
     }
 
     let params = useParams();
@@ -40,7 +41,7 @@ function Single() {
             <h3>A single room</h3>
             <form onSubmit={update_room}>
                 <label>Name: </label>
-                <input type="text" placeholder={room.name}
+                <input type="text"
                     value={name}
                     onChange={(e) => {makeChange(e)}} /><br />
                 <label>Description: </label>
