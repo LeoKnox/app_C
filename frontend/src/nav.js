@@ -1,6 +1,11 @@
+import {useNavigate} from 'react-router-dom';
+
 function NavBar() {
+    const navigate = useNavigate();
+    function goHome() {navigate('/')};
+
     return (
-        <h1>links to pages</h1>
+        <button onClick={goHome}>Home</button>
     )
 }
 
