@@ -13,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar />
         <Router>
           <Routes>
+            <NavBar />
             <Route path="/" element={<Home />} />
             <Route path="single" element={<Single />}>
               <Route path=":roomid" element={<Single />} />
