@@ -62,12 +62,15 @@ function Single() {
                     onChange={(e) => {roomChange(e)}} /><br />
                 <label>Description: </label>
                 <input type="text"
+                    value={description}
                     onChange={(e) => {descriptionChange(e)}} /><br />
                 <label>Width: </label>
                 <input type="number" 
+                    value={width}
                     onChange={(e) => {widthChange(e)}} />
                 <label> Length: </label>
                 <input type="number"
+                    value={length}
                     onChange={(e) => {lengthChange(e)}} /><br />
                 <input type="submit" value="Submit" />
             </form>
