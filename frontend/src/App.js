@@ -7,11 +7,13 @@ import {
 } from 'react-router-dom';
 import Home from './home.js';
 import Single from './single.js';
+import NavBar from './nav.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <NavBar />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
