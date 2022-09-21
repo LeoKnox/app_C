@@ -9,11 +9,6 @@ function Single() {
     const [length, setLength] = useState("");
     const [width, setWidth] = useState("");
 
-    const makeChange = (e) => {
-        name = e.target.value;
-        setName(name);
-    }
-
     const roomChange=(e)=>{
         setName(e.target.value);
     }
