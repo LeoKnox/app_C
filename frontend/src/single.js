@@ -18,6 +18,18 @@ function Single() {
         setName(e.target.value);
     }
 
+    const descriptionChange=(e)=>{
+        setDescription(e.target.value);
+    }
+
+    const widthChange=(e)=>{
+        setWidth(e.target.value);
+    }
+
+    const lengthChange=(e)=>{
+        setLength(e.target.value);
+    }
+
     let params = useParams();
     useEffect(() => {
     axios.get(`http://127.0.0.1:8000/api/room/${params.roomid}/`)
@@ -49,14 +61,14 @@ function Single() {
                     value={name}
                     onChange={(e) => {roomChange(e)}} /><br />
                 <label>Description: </label>
-                <input type="text" placeholder={room.description}
-                    onChange={(e) => {makeChange(e)}} /><br />
+                <input type="text"
+                    onChange={(e) => {descriptionChange(e)}} /><br />
                 <label>Width: </label>
-                <input type="number" placeholder={room.width}
-                    onChange={(e) => {makeChange(e)}} />
+                <input type="number" 
+                    onChange={(e) => {widthChange(e)}} />
                 <label> Length: </label>
-                <input type="number" placeholder={room.length}
-                    onChange={(e) => {makeChange(e)}} /><br />
+                <input type="number"
+                    onChange={(e) => {lengthChange(e)}} /><br />
                 <input type="submit" value="Submit" />
             </form>
         </>
