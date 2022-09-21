@@ -1,10 +1,11 @@
-import {useNavigate} from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 
 function NavBar() {
-    const navigate = useNavigate();
 
     return (
-        <button onClick={(() => {navigate("/")})}>Home</button>
+        <Router>
+            <Link to="/">Home</Link>
+        </Router>
     )
 }
 
