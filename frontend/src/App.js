@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import Home from './home.js';
 import Single from './single.js';
-import NavBar from './nav.js';
 
 function App() {
   return (
@@ -15,10 +14,10 @@ function App() {
       <header className="App-header">
         <Router>
           <Routes>
-            <NavBar />
-            <Route path="/" element={<Home />} />
-            <Route path="single" element={<Single />}>
-              <Route path=":roomid" element={<Single />} />
+            <Route path="/" element={<Home />}>
+              <Route path="single" element={<Single />}>
+                <Route path=":roomid" element={<Single />} />
+              </Route>
             </Route>
           </Routes>
         </Router>
