@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
 
     return (
-        <NavLink to="/">Home</NavLink>
+        <NavLink to={"http://localhost:3000/"}>Home</NavLink>
     )
 }
 
