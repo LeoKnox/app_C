@@ -36,6 +36,9 @@ function Single() {
         .then(res => {
             const data = res.data;
             setName(data.name);
+            setDescription(data.description);
+            setWidth(data.width);
+            setLength(data.length);
             setRoom(data);
         })
         .catch(err => {})
