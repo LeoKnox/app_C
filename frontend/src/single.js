@@ -47,6 +47,9 @@ function Single() {
 
     function update_room(e) {
         room.name = name;
+        room.description = description;
+        room.length = length;
+        room.width = width;
         axios({
             method: 'put',
             url: `http://127.0.0.1:8000/api/update/${params.roomid}`,
