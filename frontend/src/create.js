@@ -27,9 +27,8 @@ function Create() {
             method: 'post',
             url: 'http://127.0.0.1:8000/api/create/',
             data: newRoom
-        });
+        }, []);
         e.preventDefault();
-        return <Rooms />
     }
 
     return (
