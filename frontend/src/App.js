@@ -14,8 +14,9 @@ function App() {
       <header className="App-header">
         <Router>
           <Routes>
-            <Route path="/" element={<Home />}>
-                <Route path="single/:roomid" element={<Single />} />
+            <Route path="/" element={<Home />} />
+            <Route path="single/" element={<Single />}>
+                <Route path=":roomid" element={<Single />} />
             </Route>
           </Routes>
         </Router>
