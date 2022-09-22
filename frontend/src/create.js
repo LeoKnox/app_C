@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Rooms from './rooms.js';
 
 function Create() {
     const [name, setName] = useState('');
@@ -28,6 +29,7 @@ function Create() {
             data: newRoom
         });
         e.preventDefault();
+        return <Rooms />
     }
 
     return (
