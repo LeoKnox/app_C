@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
+import NavBar from './nav.js';
 
 function Single() {
     const [room, setRoom] = useState(false);
@@ -55,6 +56,7 @@ function Single() {
 
     return (
         <>
+            <NavBar />
             <h3>A single room</h3>
             <form onSubmit={update_room}>
                 <label>Name: </label>
