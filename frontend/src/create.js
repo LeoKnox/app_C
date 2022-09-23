@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Rooms from './rooms.js';
 
@@ -7,6 +8,7 @@ function Create() {
     const [description, setDescription] = useState('');
     const [length, setLength] = useState('');
     const [width, setWidth] = useState('');
+    const navigate = useNavigate();
 
     const nameChange = (e) => {
         setName(e.target.value);
@@ -29,6 +31,7 @@ function Create() {
             data: newRoom
         }, []);
         e.preventDefault();
+        navigate(0);
     }
 
     return (
