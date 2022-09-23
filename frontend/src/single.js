@@ -9,7 +9,6 @@ function Single() {
     const [description, setDescription] = useState("");
     const [length, setLength] = useState("");
     const [width, setWidth] = useState("");
-    const [temp, setTemp] = useState(5);
 
     const roomChange=(e)=>{
         setName(e.target.value);
@@ -79,7 +78,7 @@ function Single() {
                 <input type="submit" value="Submit" />
             </form>
             <svg width="400" height="400">
-                <rect width={temp} height={temp} style={{fill:'rgb(0,0,255)'}} />
+                <rect width={width*20} height={length*20} style={{fill:'rgb(0,0,255)'}} />
             </svg>
         </>
     )
