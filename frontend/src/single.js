@@ -78,7 +78,7 @@ function Single() {
                 <input type="submit" value="Submit" />
             </form>
             <svg width="400" height="400">
-                <rect width={width*20} height={length*20} style={{fill:'rgb(0,0,255)'}} />
+                <rect width={width*20} height={length*20} style={{fill:'rgb(0,0,255)',stroke-width:'3',stroke:'rgb(255,255,255)'}} />
             </svg>
         </>
     )
