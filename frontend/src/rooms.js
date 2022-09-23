@@ -5,17 +5,24 @@ import axios from 'axios';
 
 function Rooms() {
 
-    const [rooms, setRooms] = useState("");
+    const [rooms, setRooms] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
+    function lookRooms() {
+        setLoading(true);
         axios.get('http://127.0.0.1:8000/api/all/')
             .then(res => {
                 const data = res.data;
                 setRooms(data);
+                setLoading(false);
                 console.log(rooms);
             })
             .catch(err => {})
-    }, [rooms.length])
+    }
+
+    useEffect(() => {
+        lookRooms();
+    }, [])
 
     return (
         <>
@@ -27,7 +34,11 @@ function Rooms() {
                 <th>Length</th>
                 <th>Width</th>
             </tr>
-            {rooms.map((room, index) => (
+            {loading ? (
+                <p>loading..</p>
+                ) : (
+                rooms.map((room, index) => (
+                <>
                 <tr key={index}>
                     <td>
                         <Link to={`/single/${room.id}`}>
@@ -37,9 +48,10 @@ function Rooms() {
                     <td>{room.description}</td>
                     <td>{room.length}</td>
                     <td>{room.width}</td>
-                    <Delete id={room.id} />
+                    <Delete id={room.id} dataUpdated={lookRooms} />
                 </tr>
-            ))}
+                </>
+            )))}
         </table>
         </>
     )
