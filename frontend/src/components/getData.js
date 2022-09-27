@@ -6,4 +6,4 @@ class GetData {
     }
 }
 
-export default GetData();
+export default new GetData();
