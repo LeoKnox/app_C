@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Home from './home.js';
 import Single from './single.js';
+import Rooms from './components/rooms.js';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="single/" element={<Single />}>
                 <Route path=":roomid" element={<Single />} />
             </Route>
+            <Route path="/new" element={<Rooms />} />
           </Routes>
         </Router>
       </header>
