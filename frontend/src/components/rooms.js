@@ -6,8 +6,8 @@ function Rooms() {
     const [refresh, setRefresh] = useState(true);
 
     function clicked(e) {
-        e.preventdefault();
         setRefresh(!refresh);
+        e.preventDefault();
     }
 
     useEffect(() => {
