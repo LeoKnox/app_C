@@ -1,4 +1,4 @@
-import Rooms from './rooms.js';
+import Rooms from './components/rooms.js';
 import Create from './create.js';
 
 function Home() {
