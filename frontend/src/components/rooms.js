@@ -3,6 +3,13 @@ import GetData from './getData.js';
 
 function Rooms() {
     const [rooms, setRooms] = useState([]);
+    const [refresh, setRefresh] = useState(true);
+
+    function clicked(e) {
+        e.preventdefault();
+        setRefresh(!refresh);
+    }
+
     useEffect(() => {
         GetData.getRooms()
             .then(
@@ -12,11 +19,12 @@ function Rooms() {
                     console.log(rooms);
                 })
             .catch(err => {})
-    }, [])
+    }, [refresh])
 
     return (
         <>
             <h1>some rooms coming</h1>
+            <button onClick={clicked()}>Click</button>
         </>
     )
 }
