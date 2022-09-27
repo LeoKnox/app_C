@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function Create() {
+function Create(newRoom) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [length, setLength] = useState('');
@@ -49,7 +49,7 @@ function Create() {
             <label>Length: </label>
             <input type="number" value={length} onChange={(e) =>
                 {lengthChange(e)}} /><br />
-            <input type="submit" value="Submit" />
+            <input onClick={newRoom} type="submit" value="Submit" />
         </form>
         </>
     )
