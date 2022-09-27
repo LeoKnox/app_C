@@ -24,7 +24,7 @@ function Rooms() {
     return (
         <>
             <h1>some rooms coming</h1>
-            <button onClick={clicked()}>Click</button>
+            <button onClick={clicked}>Click</button>
         </>
     )
 }
